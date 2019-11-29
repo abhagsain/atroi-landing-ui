@@ -1,0 +1,197 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*::after, *::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  overflow: hidden;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.navbar {
+  -webkit-box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: ([nav-col-start] 1fr [nav-col-end])[12];
+      grid-template-columns: repeat(12, [nav-col-start] 1fr [nav-col-end]);
+  grid-column: 1 / -1;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-brand {
+  font-size: 2.4rem;
+  font-family: "Playfair Display", serif;
+  margin-right: auto;
+  text-decoration: none;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2/5;
+  grid-column: nav-col-start 2 / nav-col-start 4;
+  color: #191847;
+}
+
+.navbar-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  grid-column: nav-col-start 8 / nav-col-end 10;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+}
+
+.navbar-link {
+  font-size: 1.6rem;
+  text-decoration: none;
+  font-family: "Poppins";
+  color: #191847;
+}
+
+.link--container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.2 all;
+  transition: 0.2 all;
+  border-bottom: 2px solid transparent;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link--container:hover {
+  border-bottom: 2px solid #191847;
+}
+
+.link--container:not(:last-child) {
+  margin-right: 5rem;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 7rem calc(80vh - 7rem);
+      grid-template-rows: 7rem calc(80vh - 7rem);
+  -ms-grid-columns: ([col-start] minmax(min-content, 14rem) [col-end])[12];
+      grid-template-columns: repeat(12, [col-start] minmax(-webkit-min-content, 14rem) [col-end]);
+      grid-template-columns: repeat(12, [col-start] minmax(min-content, 14rem) [col-end]);
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+}
+
+.hero {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  grid-row: 2 / -2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 9;
+  grid-column: 2 / 11;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-container {
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 3;
+  grid-column: 7 / 10;
+  height: 100%;
+}
+
+.hero-image {
+  height: 100%;
+}
+
+.hero-content {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / 5;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.hero-heading {
+  font-size: 7.4rem;
+  grid-row: 2 / -1;
+  line-height: 102.8%;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/ 2;
+  margin-bottom: 3.6rem;
+  color: #191847;
+}
+
+.hero__button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.outlined-button {
+  text-decoration: none;
+  color: #191847;
+  border: 0.683949px solid #000000;
+  padding: 1rem 3rem;
+  border-radius: 1.3rem;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.outlined-button:hover {
+  background: #191847;
+  color: white;
+}
+
+#person {
+  outline: 2px solid red;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: scale(1.7);
+          transform: scale(1.7);
+}
+/*# sourceMappingURL=style.css.map */
