@@ -16,7 +16,7 @@
   }
 
   @if $breakpoint==phone {
-    @media screen and (max-width: 630px) {
+    @media screen and (max-width: 730px) {
       @content;
     }
   }
@@ -42,6 +42,8 @@
 
 body {
   //   overflow: hidden;
+  // height: 100vh;
+  width: 100vw;
 }
 $text-color-primary: #191847;
 html {
@@ -63,10 +65,13 @@ html {
   display: grid;
   grid-template-columns: repeat(12, [nav-col-start] 1fr [nav-col-end]);
   grid-column: 1 / -1;
-  column-gap: 3rem;
   @include respond(tabLand) {
     grid-column: 1 / -1;
     padding: 0 1.5rem;
+  }
+  .showMenu {
+    pointer-events: visible;
+    opacity: 1;
   }
   @include flex-center();
   &-brand {
@@ -77,14 +82,14 @@ html {
     grid-column: nav-col-start 3 / nav-col-start 4;
     @include blue-text-color();
     @include respond(tabLand) {
-      grid-column: nav-col-start 2 / nav-col-start 4;
+      grid-column: nav-col-start 1 / nav-col-start 4;
     }
   }
   &-mobile-menu {
     display: none;
     @include respond(tabPort) {
       display: block;
-      grid-column: 11 / 12;
+      grid-column: 13 / 13;
     }
   }
   &-links {
@@ -93,12 +98,28 @@ html {
     height: 100%;
     align-content: center;
     justify-content: flex-end;
-    grid-column: nav-col-start 8 / 12;
+    // grid-column: nav-col-start 8 / nav-col-end 12;
+    grid-column: nav-col-start 6 / nav-col-end 10;
+    @include respond(tabLand) {
+      grid-column: nav-col-start 8 / nav-col-start 13;
+    }
     @include respond(tabPort) {
-      display: none;
+      // display: none;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 7rem);
+      // display: none;
+      opacity: 0;
+      pointer-events: none;
+      background: oldlace;
+      width: 50%;
+      grid-column: nav-col-start 8 / 12;
     }
     @include respond(desktop) {
-      grid-column: nav-col-start 8 / 11;
+      // grid-column: nav-col-start 8 / 11;
     }
   }
   &-link {
@@ -106,6 +127,9 @@ html {
     @include links;
     font-family: "Poppins";
     @include blue-text-color();
+    @include respond(tabLand) {
+      display: block;
+    }
   }
 }
 .link--container {
@@ -128,7 +152,7 @@ html {
     12,
     [col-start] minmax(min-content, 14rem) [col-end]
   );
-  column-gap: 3rem;
+  // column-gap: 3rem;
   @include respond(tabLand) {
   }
   @include respond(phone) {
@@ -154,7 +178,7 @@ html {
   }
   &-image-container {
     @include respond(tabLand) {
-      grid-column: 7 / 8;
+      grid-column: 8 / 8;
     }
     @include respond(phone) {
       align-self: center;
@@ -166,17 +190,17 @@ html {
       grid-column: 1 / 10;
       height: 70%;
     }
-    grid-column: 7 / 10;
+    grid-column: 6 / 9;
     height: 100%;
   }
   &-image {
-    height: 100%;
+    height: 110%;
   }
   &-content {
     grid-column: 1 / 6;
     align-self: center;
     @include respond(tabLand) {
-      grid-column: 2/7;
+      grid-column: 1/7;
     }
 
     @include respond(phone) {
@@ -239,7 +263,7 @@ html {
   }
 }
 #person {
-  outline: 2px solid red;
+  // outline: 2px solid red;
 }
 .wave {
   position: absolute;

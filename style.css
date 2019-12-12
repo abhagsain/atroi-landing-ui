@@ -8,6 +8,10 @@
           box-sizing: inherit;
 }
 
+body {
+  width: 100vw;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -22,8 +26,6 @@ html {
   -ms-grid-columns: ([nav-col-start] 1fr [nav-col-end])[12];
       grid-template-columns: repeat(12, [nav-col-start] 1fr [nav-col-end]);
   grid-column: 1 / -1;
-  -webkit-column-gap: 3rem;
-          column-gap: 3rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -39,6 +41,11 @@ html {
   }
 }
 
+.navbar .showMenu {
+  pointer-events: visible;
+  opacity: 1;
+}
+
 .navbar-brand {
   font-size: 2.4rem;
   font-family: "Playfair Display", serif;
@@ -50,7 +57,7 @@ html {
 
 @media screen and (max-width: 1024px) {
   .navbar-brand {
-    grid-column: nav-col-start 2 / nav-col-start 4;
+    grid-column: nav-col-start 1 / nav-col-start 4;
   }
 }
 
@@ -61,9 +68,8 @@ html {
 @media screen and (max-width: 768px) {
   .navbar-mobile-menu {
     display: block;
-    -ms-grid-column: 11;
-    -ms-grid-column-span: 1;
-    grid-column: 11 / 12;
+    -ms-grid-column: 13;
+    grid-column: 13 / 13;
   }
 }
 
@@ -80,18 +86,33 @@ html {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  grid-column: nav-col-start 8 / 12;
+  grid-column: nav-col-start 6 / nav-col-end 10;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar-links {
+    grid-column: nav-col-start 8 / nav-col-start 13;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .navbar-links {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 112.5em) {
-  .navbar-links {
-    grid-column: nav-col-start 8 / 11;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: calc(100vh - 7rem);
+    opacity: 0;
+    pointer-events: none;
+    background: oldlace;
+    width: 50%;
+    grid-column: nav-col-start 8 / 12;
   }
 }
 
@@ -100,6 +121,12 @@ html {
   text-decoration: none;
   font-family: "Poppins";
   color: #191847;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar-link {
+    display: block;
+  }
 }
 
 .link--container {
@@ -134,11 +161,9 @@ html {
   -ms-grid-columns: ([col-start] minmax(min-content, 14rem) [col-end])[12];
       grid-template-columns: repeat(12, [col-start] minmax(-webkit-min-content, 14rem) [col-end]);
       grid-template-columns: repeat(12, [col-start] minmax(min-content, 14rem) [col-end]);
-  -webkit-column-gap: 3rem;
-          column-gap: 3rem;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 730px) {
   .container {
     -ms-grid-rows: 7rem calc(90vh - 7rem);
         grid-template-rows: 7rem calc(90vh - 7rem);
@@ -170,7 +195,7 @@ html {
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 730px) {
   .hero {
     -ms-grid-rows: min-content;
         grid-template-rows: -webkit-min-content;
@@ -182,21 +207,20 @@ html {
 }
 
 .hero-image-container {
-  -ms-grid-column: 7;
+  -ms-grid-column: 6;
   -ms-grid-column-span: 3;
-  grid-column: 7 / 10;
+  grid-column: 6 / 9;
   height: 100%;
 }
 
 @media screen and (max-width: 1024px) {
   .hero-image-container {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 1;
-    grid-column: 7 / 8;
+    -ms-grid-column: 8;
+    grid-column: 8 / 8;
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 730px) {
   .hero-image-container {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
@@ -221,7 +245,7 @@ html {
 }
 
 .hero-image {
-  height: 100%;
+  height: 110%;
 }
 
 .hero-content {
@@ -235,13 +259,13 @@ html {
 
 @media screen and (max-width: 1024px) {
   .hero-content {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 5;
-    grid-column: 2/7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 730px) {
   .hero-content {
     grid-column: 1 / -1;
     text-align: center;
@@ -267,7 +291,7 @@ html {
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 730px) {
   .hero-heading {
     font-size: 5rem;
   }
@@ -307,7 +331,7 @@ html {
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 730px) {
   .outlined-button {
     padding: 1rem 3rem;
     font-size: 1.5rem;
@@ -319,10 +343,6 @@ html {
     font-size: 1.2rem;
     padding: 1rem 2rem;
   }
-}
-
-#person {
-  outline: 2px solid red;
 }
 
 .wave {
