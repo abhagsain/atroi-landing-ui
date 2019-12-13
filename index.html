@@ -2,63 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <title>Atroi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Poppins&display=swap" rel="stylesheet" />
+  <link href="hamburgers.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Atroi</title>
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <a href="#" class="navbar-brand">Atroi</a>
-            <svg width="24" height="24" onclick="toggleNav()" viewBox="0 0 24 24" fill="none" class="navbar-mobile-menu"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="1" y="6" width="22" height="3.5" rx="1.75" fill="#191847" />
-                <rect x="1" y="11" width="16.1333" height="3.5" rx="1.75" fill="#191847" />
-                <rect x="1" y="16" width="12.4667" height="3.5" rx="1.75" fill="#191847" />
-            </svg>
+  <div class="container">
+    <nav class="navbar">
+      <a href="#" class="navbar-brand">Atroi</a>
 
-
-            <div class="navbar-links">
-                <div class="link--container">
-
-                    <a href="#home" class="navbar-link">Home</a>
-                </div>
-                <div class="link--container">
-
-                    <a href="#blog" class="navbar-link">Blog</a>
-                </div>
-                <div class="link--container">
-
-                    <a href="#" class="navbar-link">Contact</a>
-                </div>
-            </div>
-        </nav>
-        <main class="hero">
-            <div class="hero-content">
-                <h2 class="hero-heading">Speed up your workflow</h2>
-                <div class="outlined-buttons">
-                    <a href="#" class="outlined-button hero__button">Join Now</a>
-                    <a href="#" class="outlined-button hero__button">Watch Video </a>
-                </div>
-            </div>
-            <div class="hero-image-container">
-                <img src="./assets/hero-person.svg" alt="altroi person" class="hero-image">
-            </div>
-        </main>
-    </div>
+      <button class="hamburger navbar-mobile-menu hamburger--slider" type="button" onclick="toggleNav()">
+        <span class="hamburger-box ">
+          <span class="hamburger-inner "></span>
+        </span>
+      </button>
+      <div class="navbar-links">
+        <div class="link--container">
+          <a href="#home" class="navbar-link">Home</a>
+        </div>
+        <div class="link--container">
+          <a href="#blog" class="navbar-link">Blog</a>
+        </div>
+        <div class="link--container">
+          <a href="#" class="navbar-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main class="hero">
+      <div class="hero-content">
+        <h2 class="hero-heading">Speed up your workflow</h2>
+        <div class="outlined-buttons">
+          <a href="#" class="outlined-button hero__button">Join Now</a>
+          <a href="#" class="outlined-button hero__button">Watch Video </a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <img src="./assets/hero-person.svg" alt="altroi person" class="hero-image" />
+      </div>
+    </main>
+  </div>
 </body>
 <script>
-    function toggleNav() {
-        console.log("clicked");
-        const menu = document.querySelector(".navbar-links");
-        console.log(menu);
-        // menu.style.opacity = "1"
-        menu.classList.toggle("showMenu");
-    }
+  var hamburger = document.querySelector(".hamburger");
+  // On click
+  hamburger.addEventListener("click", function () {
+    // Toggle class "is-active"
+    hamburger.classList.toggle("is-active");
+    // Do something else, like open/close menu
+  });
+
+  function toggleNav() {
+    const menu = document.querySelector(".navbar-links");
+    // menu.style.opacity = "1"
+
+    menu.classList.toggle("showMenu");
+  }
 </script>
 
 </html>
