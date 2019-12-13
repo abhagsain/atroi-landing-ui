@@ -26,7 +26,9 @@ html {
   height: auto;
   -ms-grid-columns: ([nav-col-start] 1fr [nav-col-end])[12];
       grid-template-columns: repeat(12, [nav-col-start] 1fr [nav-col-end]);
-  grid-column: 1 / -1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 13;
+  grid-column: 1 / 14;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -37,7 +39,9 @@ html {
 
 @media screen and (max-width: 1024px) {
   .navbar {
-    grid-column: 1 / -1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 13;
+    grid-column: 1 / 14;
   }
 }
 

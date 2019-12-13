@@ -65,9 +65,9 @@ html {
   display: grid;
   height: auto;
   grid-template-columns: repeat(12, [nav-col-start] 1fr [nav-col-end]);
-  grid-column: 1 / -1;
+  grid-column: 1 / 14;
   @include respond(tabLand) {
-    grid-column: 1 / -1;
+    grid-column: 1 / 14;
     // padding: 0 1.5rem;
   }
   @include respond(tabPort) {
