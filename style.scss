@@ -39,11 +39,32 @@
     }
   }
 }
-
+#wavy {
+  position: absolute;
+  left: 0;
+  bottom: 0%;
+  width: 100vw;
+  z-index: -1000;
+  overflow-y: hidden;
+  @include respond(tabLand) {
+    // bottom: -10%;
+  }
+  @include respond(tabPort) {
+    bottom: 0%;
+  }
+  @include respond(desktop) {
+    // bottom: -25%;
+  }
+}
 body {
   //   overflow: hidden;
   // height: 100vh;
   width: 100vw;
+
+  // background: url("./assets/desktop-wave.svg");
+  // background-size: cover;
+  // background-position: left bottom;
+  // overflow-y: hidden;
 }
 $text-color-primary: #191847;
 html {

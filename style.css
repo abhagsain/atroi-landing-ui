@@ -8,6 +8,21 @@
           box-sizing: inherit;
 }
 
+#wavy {
+  position: absolute;
+  left: 0;
+  bottom: 0%;
+  width: 100vw;
+  z-index: -1000;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  #wavy {
+    bottom: 0%;
+  }
+}
+
 body {
   width: 100vw;
 }
